@@ -1,6 +1,7 @@
 package com.study.workshop.config;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,16 @@ public class TestConfig implements CommandLineRunner{
 		userRepository.saveAll(Arrays.asList(firstUser, secondtUser));
 		orderRepository.saveAll(Arrays.asList(firstOrder, secondOrder));
 		categoryRepository.saveAll(Arrays.asList(eletronics, books, computers));
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		p1.getCategories().add(books);
+		p2.getCategories().add(eletronics);
+		p3.getCategories().add(computers);
+		p3.getCategories().add(eletronics);
+		p4.getCategories().add(computers);
+		p4.getCategories().add(eletronics);
+		p5.getCategories().add(books);
+		
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 	}
 }
